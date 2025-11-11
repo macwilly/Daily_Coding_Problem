@@ -14,3 +14,30 @@ Test Case
 5. get_extension("archive.tar.gz") should return "gz".
 6. get_extension("final.draft.") should return "none".
 '''
+
+def get_extension(filename):
+    # Set the base case to be none
+    ext = "none"
+    # Check to see if the file ends with a .
+    if filename.endswith("."):
+        pass
+    # Check to see if the file contains a . the first if and this elif could be one check with an ||
+    elif not filename.__contains__("."):
+        pass
+    # Split file on the . take the last index
+    else:
+        ext = filename.split(".")[-1]
+
+    return ext
+
+test_arr = [
+    "document.txt",
+    "README",
+    "image.PNG",
+    ".gitignore",
+    "archive.tar.gz",
+    "final.draft.",
+]
+
+for filename in test_arr:
+    print(get_extension(filename))
